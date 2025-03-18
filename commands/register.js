@@ -108,11 +108,11 @@ module.exports = {
             const registerData = await registerCollection.findOne({ discord_id: interaction.user.id });
             if (registerData) {
                 await refreshPlayer(client, interaction.guild.id, interaction.user.id);
-                interaction.editReply({ embeds: [errorEmbed.setDescription(`❗ You are already registered. Necessary roles have been granted.`)] })
+                interaction.editReply({ embeds: [errorEmbed2.setDescription(`❗ You are already registered. Necessary roles have been granted.`)] })
                     .catch(() => {
                         interaction.channel.send({
                             content: `<@${interaction.user.id}>`,
-                            embeds: [errorEmbed.setDescription(`❗ You are already registered. Necessary roles have been granted.`)]
+                            embeds: [errorEmbed2.setDescription(`❗ You are already registered. Necessary roles have been granted.`)]
                         });
                     });
 
